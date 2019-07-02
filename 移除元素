@@ -1,0 +1,10 @@
+def removeElement(nums,val):
+    flag=0
+    while flag==0:
+        if val in nums:
+            nums.remove(val)
+        else:
+            flag=1
+nums=[3,2,2,3]
+removeElement(nums,3)
+print(nums)

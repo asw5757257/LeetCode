@@ -1,0 +1,21 @@
+
+def longestCommonPrefix(strs):
+    res=""
+    i=0
+    j=0
+    while True:
+        res_s=strs[0][i]
+        if i>len(strs[0])-1:
+            return res
+        for s in strs[1:]:
+            if j<len(s)-1:
+                if s[j]!=res_s:
+                    return res
+            else:
+                return res
+        res+=res_s
+        i=i+1
+        j=j+1
+a=["flow","flwer","floight"]
+b=longestCommonPrefix(a)
+print(b)

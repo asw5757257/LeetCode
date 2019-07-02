@@ -1,0 +1,21 @@
+class Solution:
+    def letterCombinations(self, digits):
+        """
+        :type digits: str
+        :rtype: List[str]
+        """
+        dicts={2:'abc',3:'def',4:'ghi',5:'jkl',6:'mno',7:'pqrs',8:'tuv',9:'wxyz'}
+        l=[' ']
+        if len(digits)==0:
+            return []
+        while len(digits)!=0:
+            mm=[]
+            for i in range(0,len(l)):
+                for index in range(0,len(dicts[int(digits[0])])):
+                    mm.append(l[i]+dicts[int(digits[0])][index])
+            for i in range(0,len(mm)):
+                mm[i]=mm[i].lstrip()
+            l=mm[:]
+            digits=digits[1:]
+        return l
+        

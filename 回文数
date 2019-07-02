@@ -1,0 +1,38 @@
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        queue<int>q;
+        stack<int>s;
+        if(x<0){return false;}
+        else
+        {
+            int pop;
+            while(x!=0)
+             {
+                pop=x%10;
+                q.push(pop);
+                s.push(pop);
+                x=x/10;
+             }
+            int flag=1;
+            for(int i=0;i<q.size();i++)
+            {
+                if(s.top()==q.front())
+                {
+                    s.pop();
+                    q.pop();
+                    flag=1;
+                }
+                else flag=0;
+                
+            }
+            if(flag==1)
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+};
